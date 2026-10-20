@@ -30,14 +30,30 @@ Set the webhook URL in `.env.local` (see `.env.example`):
 NEXT_PUBLIC_GOOGLE_SHEET_WEBHOOK_URL=https://script.google.com/macros/s/AKfy.../exec
 ```
 
-The Server Action sends a `POST` with a JSON body to that URL. Each booking appends one row with
-these columns, in order:
+The Server Action sends a `POST` with a JSON body to that URL, shaped like:
 
-| Booking ID | Customer Name | Email | Phone | Table ID | Date | Start Time | Duration | Status |
-| ---------- | ------------- | ----- | ----- | -------- | ---- | ---------- | -------- | ------ |
+```json
+{
+  "Booking ID": "JNT-20261021-ABCD",
+  "Customer Name": "Asha Patel",
+  "Email": "asha@example.com",
+  "Phone": "+91 98765 43210",
+  "Table ID": "T3",
+  "Date": "2026-10-25",
+  "Start Time": "18:30",
+  "Duration": "2 Hours",
+  "Status": "CONFIRMED"
+}
+```
+
+The script appends one row per booking with these columns, in order:
+
+| Booking ID | Customer Name | Email | Phone | Table ID | Date | Start Time | Duration | Rate | Total | Status |
+| ---------- | ------------- | ----- | ----- | -------- | ---- | ---------- | -------- | ---- | ----- | ------ |
 
 The request is made from the server, so the browser never talks to Google directly and no CORS
-setup is needed.
+setup is needed. The action reads the script's JSON reply and fails the booking if it returns
+`{ "ok": false }`, since Apps Script always answers HTTP 200 even on errors.
 
 ### Creating the Apps Script endpoint
 
@@ -45,32 +61,101 @@ setup is needed.
 2. In the sheet, open **Extensions → Apps Script** and paste:
 
 ```js
-const SHEET_NAME = 'Bookings';
+const SHEET_NAMES = ['Bookings', 'Reservations'];
+
+const RATES = {
+  T1: 250,
+  T2: 250,
+  T3: 300,
+  T4: 400,
+  T5: 500,
+  T6: 800,
+};
+
+function text(value) {
+  return String(value == null ? '' : value).trim();
+}
+
+function findSheet(ss) {
+  for (const name of SHEET_NAMES) {
+    const sheet = ss.getSheetByName(name);
+    if (sheet) return sheet;
+  }
+  const sheets = ss.getSheets();
+  if (sheets.length > 0) return sheets[0];
+  throw new Error(`No sheet tab found. Expected one of: ${SHEET_NAMES.join(', ')}`);
+}
+
+function parseDurationHours(raw) {
+  const match = text(raw).match(/\d+(\.\d+)?/);
+  return match ? Number(match[0]) : NaN;
+}
+
+function jsonResponse(payload) {
+  return ContentService.createTextOutput(JSON.stringify(payload)).setMimeType(
+    ContentService.MimeType.JSON,
+  );
+}
 
 function doPost(e) {
   const lock = LockService.getScriptLock();
   lock.waitLock(30000);
   try {
-    const data = JSON.parse(e.postData.contents);
-    const sheet = SpreadsheetApp.getActive().getSheetByName(SHEET_NAME);
+    if (!e || !e.postData || !e.postData.contents) {
+      throw new Error('No POST payload received.');
+    }
+
+    let data;
+    try {
+      data = JSON.parse(e.postData.contents);
+    } catch (parseError) {
+      throw new Error(`Invalid JSON payload: ${parseError.message}`);
+    }
+
+    const name = text(data['Customer Name']);
+    const tableId = text(data['Table ID']);
+    const date = text(data['Date']);
+    const startTime = text(data['Start Time']);
+
+    if (!name || !tableId || !date || !startTime) {
+      throw new Error('Missing required booking fields (Customer Name, Table ID, Date, Start Time).');
+    }
+
+    const hourlyRate = RATES[tableId] || 250;
+    let durationHours = parseDurationHours(data['Duration']);
+    if (!Number.isFinite(durationHours) || durationHours <= 0) {
+      durationHours = 1;
+    }
+    const totalAmount = hourlyRate * durationHours;
+    const bookingId =
+      text(data['Booking ID']) || `BK-${Math.floor(100000 + Math.random() * 900000)}`;
+    const status = text(data['Status']) || 'CONFIRMED';
+
+    const ss = SpreadsheetApp.getActiveSpreadsheet();
+    if (!ss) {
+      throw new Error(
+        'No active spreadsheet. Re-deploy this script from the sheet it should write to.',
+      );
+    }
+    const sheet = findSheet(ss);
+
     sheet.appendRow([
-      data['Booking ID'],
-      data['Customer Name'],
-      data['Email'],
-      data['Phone'],
-      data['Table ID'],
-      data['Date'],
-      data['Start Time'],
-      data['Duration'],
-      data['Status'],
+      bookingId,
+      name,
+      text(data['Email']),
+      text(data['Phone']),
+      tableId,
+      date,
+      startTime,
+      `${durationHours} Hr(s)`,
+      `₹${hourlyRate.toFixed(2)}`,
+      `₹${totalAmount.toFixed(2)}`,
+      status,
     ]);
-    return ContentService.createTextOutput(
-      JSON.stringify({ ok: true })
-    ).setMimeType(ContentService.MimeType.JSON);
-  } catch (err) {
-    return ContentService.createTextOutput(
-      JSON.stringify({ ok: false, error: String(err) })
-    ).setMimeType(ContentService.MimeType.JSON);
+
+    return jsonResponse({ ok: true, result: 'success', bookingId, totalAmount });
+  } catch (error) {
+    return jsonResponse({ ok: false, result: 'error', error: error.toString() });
   } finally {
     lock.releaseLock();
   }
@@ -78,12 +163,13 @@ function doPost(e) {
 ```
 
 3. **Deploy → New deployment → Web app**, set *Execute as* to your account and *Who has access* to
-   **Anyone**. Copy the `/exec` URL into `.env.local`.
+   **Anyone**. Copy the `/exec` URL into `.env.local`. The script writes to a tab named `Bookings`
+   (or `Reservations`), falling back to the first tab.
 4. Restart the dev server. The confirmation screen reports whether the row was appended.
 
 If the variable is unset, bookings still succeed but the confirmation screen warns that the sheet
-sync is disabled. If the webhook returns a non-2xx response, the form shows an error and the
-booking is not confirmed.
+sync is disabled. If the webhook returns a non-2xx response or `{ "ok": false }`, the form shows an
+error and the booking is not confirmed.
 
 ## Project structure
 

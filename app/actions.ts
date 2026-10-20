@@ -139,6 +139,14 @@ export async function submitReservation(
       if (!response.ok) {
         throw new Error(`Webhook responded with ${response.status}`)
       }
+
+      const reply = (await response.json().catch(() => null)) as
+        | { ok?: boolean; error?: string }
+        | null
+
+      if (reply && reply.ok === false) {
+        throw new Error(reply.error || 'Reservation sheet rejected the booking')
+      }
     } catch {
       return {
         status: 'error',
