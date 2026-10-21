@@ -14,14 +14,14 @@ export function AmenitiesSection() {
         <div className="joint-drift absolute bottom-0 -left-20 h-64 w-64 rounded-full bg-[radial-gradient(circle,rgba(0,0,0,0.35),transparent_65%)] blur-2xl [animation-delay:-6s]" />
       </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 sm:py-16 lg:py-20">
         <SectionLabel>What you get</SectionLabel>
 
-        <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
-          <h2 className="text-[clamp(1.75rem,6vw,3rem)] leading-none font-black tracking-[-0.04em] text-joint-cream uppercase">
+        <div className="mb-6 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+          <h2 className="text-[clamp(1.5rem,5vw,2.75rem)] leading-none font-black tracking-[-0.04em] text-joint-cream uppercase">
             More than a table.
           </h2>
-          <p className="max-w-sm text-[11px] leading-relaxed font-bold tracking-[0.1em] text-joint-cream/80 uppercase">
+          <p className="max-w-sm text-[10px] leading-relaxed font-bold tracking-[0.1em] text-joint-cream/80 uppercase sm:text-[11px]">
             Everything is ready before you arrive — cue, chalk, and a seat to
             collapse into.
           </p>
@@ -30,14 +30,14 @@ export function AmenitiesSection() {
         <ul className="joint-reveal-group grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {AMENITIES.map((amenity) => (
             <li key={amenity.tag}>
-              <TiltCard className="h-full border-2 border-joint-black bg-joint-cream p-5 text-joint-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-                <span className="inline-block border-2 border-joint-black bg-joint-orange px-2 py-1 text-[9px] font-bold tracking-[0.2em] uppercase">
+              <TiltCard className="h-full border-2 border-joint-black bg-joint-cream p-4 sm:p-5 text-joint-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                <span className="inline-block border-2 border-joint-black bg-joint-orange px-2 py-1 text-[8px] font-bold tracking-[0.18em] uppercase sm:text-[9px]">
                   {amenity.tag}
                 </span>
-                <h3 className="mt-4 text-[13px] leading-tight font-black tracking-[-0.01em] uppercase">
+                <h3 className="mt-3 text-[12px] leading-tight font-black tracking-[-0.01em] uppercase sm:text-[13px]">
                   {amenity.title}
                 </h3>
-                <p className="mt-2 text-[11px] leading-relaxed font-bold tracking-[0.06em] text-black/60 uppercase">
+                <p className="mt-2 text-[10px] leading-relaxed font-bold tracking-[0.06em] text-black/60 uppercase sm:text-[11px]">
                   {amenity.body}
                 </p>
               </TiltCard>

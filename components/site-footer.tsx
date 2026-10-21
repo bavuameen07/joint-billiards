@@ -5,28 +5,28 @@ import { NAV_LINKS, SITE } from "@/lib/site";
 export function SiteFooter() {
   return (
     <footer className="joint-grain relative overflow-hidden border-t-2 border-joint-black bg-joint-orange">
-      <div className="relative z-10 mx-auto grid w-full max-w-6xl gap-6 px-4 py-10 sm:px-6 md:grid-cols-3">
-        <div>
+      <div className="relative z-10 mx-auto grid w-full max-w-6xl gap-8 sm:gap-10 px-4 py-8 sm:px-6 sm:py-12 lg:grid-cols-3">
+        <div className="text-center lg:text-left">
           <BrandLogo
             variant="cream"
-            sizes="220px"
-            className="joint-extrude-soft h-auto w-[190px] select-none"
+            sizes="(max-width: 640px) 70vw, 180px"
+            className="joint-extrude-soft h-auto w-[min(70vw,180px)] mx-auto lg:mx-0 select-none"
           />
-          <p className="mt-2 text-[10px] font-bold tracking-[0.2em] text-joint-cream/80 uppercase">
+          <p className="mt-2 text-[10px] font-bold tracking-[0.2em] text-joint-cream/80 uppercase sm:text-[11px]">
             {SITE.tagline}
           </p>
         </div>
 
         <nav aria-label="Footer">
-          <p className="text-[10px] font-bold tracking-[0.25em] text-joint-black uppercase">
+          <p className="text-[10px] font-bold tracking-[0.25em] text-joint-black uppercase mb-3 sm:text-[11px]">
             Explore
           </p>
-          <ul className="mt-3 space-y-2">
+          <ul className="space-y-2 sm:space-y-3">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="joint-link inline-block text-[11px] font-bold tracking-[0.15em] text-joint-cream uppercase transition hover:text-joint-black"
+                  className="joint-link inline-flex min-h-[44px] items-center text-[11px] font-bold tracking-[0.15em] text-joint-cream uppercase transition hover:text-joint-black sm:text-[12px]"
                 >
                   {link.label}
                 </Link>
@@ -35,26 +35,24 @@ export function SiteFooter() {
           </ul>
         </nav>
 
-        <div>
-          <p className="text-[10px] font-bold tracking-[0.25em] text-joint-black uppercase">
+        <div className="lg:ml-auto">
+          <p className="text-[10px] font-bold tracking-[0.25em] text-joint-black uppercase mb-3 sm:text-[11px]">
             Visit
           </p>
-          <address className="mt-3 space-y-1 text-[11px] font-bold tracking-[0.1em] text-joint-cream not-italic uppercase">
+          <address className="space-y-1.5 text-[11px] font-bold tracking-[0.1em] text-joint-cream not-italic uppercase sm:text-[12px]">
             {SITE.address.map((line) => (
-              <span key={line} className="block">
-                {line}
-              </span>
+              <span key={line} className="block">{line}</span>
             ))}
             <span className="block">Open {SITE.hours}</span>
             <a
               href={`tel:${SITE.phone.replace(/\s+/g, "")}`}
-              className="block transition hover:text-joint-black"
+              className="block min-h-[44px] flex items-center transition hover:text-joint-black"
             >
               {SITE.phone}
             </a>
             <a
               href={`mailto:${SITE.email}`}
-              className="block transition hover:text-joint-black"
+              className="block min-h-[44px] flex items-center transition hover:text-joint-black"
             >
               {SITE.email}
             </a>
@@ -63,11 +61,11 @@ export function SiteFooter() {
       </div>
 
       <div className="relative z-10 border-t-2 border-joint-black">
-        <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-4 text-[9px] font-bold tracking-[0.2em] text-joint-cream/80 uppercase sm:px-6">
-          <span>
+        <div className="mx-auto flex w-full max-w-6xl flex-col sm:flex-row flex-wrap items-center justify-center sm:justify-between gap-3 px-4 py-4 text-[9px] font-bold tracking-[0.2em] text-joint-cream/80 uppercase sm:px-6">
+          <span className="text-center sm:text-left">
             © {SITE.name} — {SITE.tagline}
           </span>
-          <span>Break • Pot • Chalk • Repeat</span>
+          <span className="text-center">Break • Pot • Chalk • Repeat</span>
         </div>
       </div>
 

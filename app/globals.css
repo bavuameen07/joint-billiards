@@ -618,6 +618,157 @@
   .joint-premium-photo-inline {
     display: inline-block;
   }
+
+  .joint-poster-scroll {
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-padding: 0 1rem;
+  }
+
+  .joint-poster-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .joint-poster-scroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .joint-poster-card {
+    will-change: transform;
+    transform: translateZ(0);
+  }
+
+  @media (min-width: 1024px) {
+    .joint-poster-card {
+      transform: perspective(1000px) rotateY(15deg) translateZ(-80px) scale(0.94);
+      filter: brightness(0.7) saturate(0.85);
+      transition:
+        transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1),
+        filter 0.6s ease;
+    }
+
+    .joint-poster-card:nth-child(2) {
+      transform: perspective(1000px) rotateY(0deg) translateZ(40px) scale(1.04);
+      filter: brightness(1);
+    }
+
+    .joint-poster-card:nth-child(3) {
+      transform: perspective(1000px) rotateY(-15deg) translateZ(-80px) scale(0.94);
+      filter: brightness(0.7) saturate(0.85);
+    }
+
+    .joint-poster-card:hover,
+    .joint-poster-card:focus-visible {
+      z-index: 10;
+      transform: perspective(1000px) rotateY(0deg) translateZ(120px) scale(1.08);
+      filter: brightness(1.1);
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .joint-reveal-group > * {
+      animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .joint-btn {
+      transition-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .joint-tilt {
+      transition-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .joint-link::after {
+      transition-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .joint-shift {
+      transition-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .joint-filmstrip-track {
+      animation-timing-function: linear;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .joint-btn {
+      min-height: 48px;
+      min-width: 48px;
+    }
+
+    .joint-link {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0.5rem 0.25rem;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .joint-reveal-group > * {
+      animation-range: entry 0% cover 35%;
+    }
+
+    .joint-reveal-group > *:nth-child(2) {
+      animation-range: entry 0% cover 40%;
+    }
+
+    .joint-reveal-group > *:nth-child(3) {
+      animation-range: entry 0% cover 45%;
+    }
+
+    .joint-poster-card {
+      scroll-snap-align: center;
+    }
+
+    .joint-filmstrip-frame {
+      scroll-snap-align: center;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .joint-btn:hover {
+      transform: translate(-2px, -2px);
+    }
+
+    .joint-btn:active {
+      transform: translate(1px, 1px);
+    }
+  }
+
+  .touch-action-pan-y {
+    touch-action: pan-y;
+  }
+
+  .touch-action-manipulation {
+    touch-action: manipulation;
+  }
+
+  .will-change-transform {
+    will-change: transform;
+  }
+
+  .will-change-auto {
+    will-change: auto;
+  }
 }
 
 @supports (animation-timeline: view()) {

@@ -62,27 +62,27 @@ export function Hero() {
 
       <div aria-hidden="true" className="joint-grain pointer-events-none absolute inset-0" />
 
-      <div className="relative z-10 mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 sm:py-14 lg:py-16">
         <Header />
 
-        <PremiumPhotoHighlight variant="hero" className="my-8" />
+        <PremiumPhotoHighlight variant="hero" className="my-6 sm:my-8" />
 
-        <p className="mx-auto mt-8 max-w-2xl text-center text-[12px] leading-relaxed font-bold tracking-[0.1em] text-joint-cream uppercase sm:text-sm sm:tracking-[0.14em]">
+        <p className="mx-auto mt-6 max-w-2xl text-center text-[11px] leading-relaxed font-bold tracking-[0.1em] text-joint-cream uppercase sm:text-[12px] sm:tracking-[0.12em]">
           {SITE.claim}
         </p>
 
-        <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Link
             href="/book"
-            className="joint-btn w-full border-2 border-joint-black bg-joint-cream px-7 py-4 text-center text-xs font-bold tracking-[0.2em] text-joint-black uppercase shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none sm:w-auto sm:text-sm"
+            className="joint-btn w-full min-h-[48px] border-2 border-joint-black bg-joint-cream px-6 py-3 text-center text-[11px] font-bold tracking-[0.18em] text-joint-black uppercase shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none sm:w-auto sm:text-sm sm:px-8 sm:py-4"
           >
             Book a table →
           </Link>
           <Link
             href="#tables"
-            className="joint-btn w-full border-2 border-joint-black bg-transparent px-7 py-4 text-center text-xs font-bold tracking-[0.2em] text-joint-cream uppercase shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 hover:bg-joint-black hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none sm:w-auto sm:text-sm"
+            className="joint-btn w-full min-h-[48px] border-2 border-joint-black bg-transparent px-6 py-3 text-center text-[11px] font-bold tracking-[0.18em] text-joint-cream uppercase shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 hover:bg-joint-black hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none sm:w-auto sm:text-sm sm:px-8 sm:py-4"
           >
-            View tables &amp; rates
+            View tables & rates
           </Link>
         </div>
       </div>
@@ -92,12 +92,12 @@ export function Hero() {
           {STATS.map((stat) => (
             <div
               key={stat.label}
-              className="joint-float-slow bg-joint-black px-4 py-5 text-center"
+              className="joint-float-slow bg-joint-black px-3 py-4 text-center min-h-[100px] flex flex-col items-center justify-center"
             >
-              <dt className="text-[9px] font-bold tracking-[0.25em] text-joint-orange uppercase">
+              <dt className="text-[8px] font-bold tracking-[0.2em] text-joint-orange uppercase sm:text-[9px]">
                 {stat.label}
               </dt>
-              <dd className="mt-1.5 text-xl font-black tracking-[-0.03em] text-joint-cream uppercase transition-colors duration-300 hover:text-joint-amber sm:text-2xl">
+              <dd className="mt-1 text-xl font-black tracking-[-0.03em] text-joint-cream uppercase transition-colors duration-300 hover:text-joint-amber sm:text-2xl">
                 {stat.value}
               </dd>
             </div>

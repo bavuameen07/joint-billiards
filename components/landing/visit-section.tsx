@@ -10,23 +10,23 @@ export function VisitSection() {
       aria-label="Hours and location"
       className="joint-grain relative border-b-2 border-joint-black"
     >
-      <div className="relative z-10 mx-auto w-full max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
-        <SectionLabel>Hours &amp; location</SectionLabel>
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 sm:py-16 lg:py-20">
+        <SectionLabel>Hours & location</SectionLabel>
 
-        <div className="joint-reveal-group grid gap-4 lg:grid-cols-3">
-          <div>
-            <TiltCard className="h-full border-2 border-joint-black bg-joint-cream p-5 text-joint-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-              <p className="text-[10px] font-bold tracking-[0.25em] text-joint-orange uppercase">
+        <div className="joint-reveal-group grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="lg:col-span-1">
+            <TiltCard className="h-full border-2 border-joint-black bg-joint-cream p-4 sm:p-5 text-joint-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+              <p className="text-[9px] font-bold tracking-[0.2em] text-joint-orange uppercase sm:text-[10px]">
                 Opening hours
               </p>
-              <p className="mt-3 text-3xl font-black tracking-[-0.04em] uppercase">
+              <p className="mt-2 text-2xl font-black tracking-[-0.03em] uppercase sm:text-3xl">
                 {SITE.hours}
               </p>
-              <p className="mt-2 text-[11px] leading-relaxed font-bold tracking-[0.08em] text-black/60 uppercase">
+              <p className="mt-1 text-[10px] leading-relaxed font-bold tracking-[0.08em] text-black/60 uppercase sm:text-[11px]">
                 {SITE.hoursNote}
               </p>
 
-              <dl className="mt-6 space-y-2 border-t-2 border-dashed border-black/20 pt-4 text-[11px] font-bold tracking-[0.1em] uppercase">
+              <dl className="mt-4 space-y-1.5 border-t-2 border-dashed border-black/20 pt-3 text-[10px] font-bold tracking-[0.1em] uppercase sm:text-[11px]">
                 {[
                   ["Mon — Thu", "12PM — 2AM"],
                   ["Fri — Sat", "12PM — 3AM"],
@@ -42,11 +42,11 @@ export function VisitSection() {
           </div>
 
           <div>
-            <TiltCard className="h-full border-2 border-joint-black bg-joint-cream p-5 text-joint-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-              <p className="text-[10px] font-bold tracking-[0.25em] text-joint-orange uppercase">
+            <TiltCard className="h-full border-2 border-joint-black bg-joint-cream p-4 sm:p-5 text-joint-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+              <p className="text-[9px] font-bold tracking-[0.2em] text-joint-orange uppercase sm:text-[10px]">
                 Find us
               </p>
-              <address className="mt-3 space-y-1 text-[12px] font-bold tracking-[0.08em] not-italic uppercase">
+              <address className="mt-2 space-y-1 text-[11px] font-bold tracking-[0.08em] not-italic uppercase sm:text-[12px]">
                 {SITE.address.map((line) => (
                   <span key={line} className="block">
                     {line}
@@ -54,22 +54,22 @@ export function VisitSection() {
                 ))}
               </address>
 
-              <div className="mt-6 space-y-2 border-t-2 border-dashed border-black/20 pt-4">
+              <div className="mt-4 space-y-2 border-t-2 border-dashed border-black/20 pt-3">
                 <a
                   href={`tel:${SITE.phone.replace(/\s+/g, "")}`}
-                  className="block text-[12px] font-bold tracking-[0.08em] uppercase transition hover:text-joint-orange"
+                  className="block min-h-[44px] flex items-center text-[11px] font-bold tracking-[0.08em] uppercase transition hover:text-joint-orange sm:text-[12px]"
                 >
                   {SITE.phone}
                 </a>
                 <a
                   href={`mailto:${SITE.email}`}
-                  className="block text-[12px] font-bold tracking-[0.08em] uppercase transition hover:text-joint-orange"
+                  className="block min-h-[44px] flex items-center text-[11px] font-bold tracking-[0.08em] uppercase transition hover:text-joint-orange sm:text-[12px]"
                 >
                   {SITE.email}
                 </a>
                 <Link
                   href="/book"
-                  className="joint-btn inline-block border-2 border-joint-black bg-joint-black px-4 py-2.5 text-[10px] font-bold tracking-[0.2em] text-joint-cream uppercase shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] transition hover:bg-joint-orange hover:text-joint-black"
+                  className="joint-btn min-h-[44px] w-full flex items-center justify-center border-2 border-joint-black bg-joint-black px-3 py-2 text-[9px] font-bold tracking-[0.18em] text-joint-cream uppercase shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] transition hover:bg-joint-orange hover:text-joint-black sm:px-4 sm:py-2.5 sm:text-[10px]"
                 >
                   Reserve now →
                 </Link>
@@ -78,17 +78,17 @@ export function VisitSection() {
           </div>
 
           <div>
-            <TiltCard className="h-full border-2 border-joint-black bg-joint-cream p-5 text-joint-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-              <p className="text-[10px] font-bold tracking-[0.25em] text-joint-orange uppercase">
+            <TiltCard className="h-full border-2 border-joint-black bg-joint-cream p-4 sm:p-5 text-joint-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+              <p className="text-[9px] font-bold tracking-[0.2em] text-joint-orange uppercase sm:text-[10px]">
                 House rules
               </p>
-              <ul className="mt-4 space-y-3">
+              <ul className="mt-3 space-y-2.5">
                 {HOUSE_RULES.map((rule) => (
                   <li
                     key={rule}
-                    className="flex gap-3 text-[11px] leading-relaxed font-bold tracking-[0.06em] text-black/65 uppercase"
+                    className="flex gap-3 text-[10px] leading-relaxed font-bold tracking-[0.06em] text-black/65 uppercase sm:text-[11px]"
                   >
-                    <span aria-hidden="true" className="text-joint-orange">
+                    <span aria-hidden="true" className="text-joint-orange flex-shrink-0 mt-0.5">
                       ▲
                     </span>
                     <span>{rule}</span>

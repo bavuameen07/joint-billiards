@@ -7,18 +7,19 @@ export function Filmstrip() {
   return (
     <div
       aria-hidden="true"
-      className="joint-filmstrip joint-grain relative overflow-hidden border-y-2 border-joint-black bg-joint-black py-4"
+      className="joint-filmstrip joint-grain relative overflow-hidden border-y-2 border-joint-black bg-joint-black py-3 sm:py-4"
     >
-      <div className="joint-filmstrip-track">
+      <div className="joint-filmstrip-track touch-action-pan-y" style={{ willChange: "transform" }}>
         {frames.map((poster, index) => (
-          <div key={`${poster.src}-${index}`} className="joint-filmstrip-frame">
+          <div key={`${poster.src}-${index}`} className="joint-filmstrip-frame flex-shrink-0">
             <span className="joint-filmstrip-holes" />
             <Image
               src={poster.src}
               alt=""
-              width={88}
-              height={110}
-              className="h-[110px] w-[88px] shrink-0 object-cover"
+              width={80}
+              height={100}
+              className="h-[100px] w-[80px] shrink-0 object-cover"
+              loading="lazy"
             />
             <span className="joint-filmstrip-holes" />
           </div>
