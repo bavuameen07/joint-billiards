@@ -85,7 +85,7 @@ function FormPanel({ onRestart }: { onRestart: () => void }) {
         action={formAction}
         onFocusCapture={syncMinDate}
         onPointerDownCapture={syncMinDate}
-        className="grid gap-5 p-5 sm:p-7 md:grid-cols-2"
+        className="joint-reveal-group grid gap-5 p-5 sm:p-7 md:grid-cols-2"
       >
         {showErrorBanner && (
           <div

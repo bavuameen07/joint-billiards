@@ -1,8 +1,8 @@
 # JOINT — Billiards & Lounge Reservations
 
-A responsive Next.js (App Router) booking app for the JOINT billiards lounge. Brutalist/retro
-styling: vibrant orange background, cream surfaces, monospace type, and hard black borders with
-offset shadows.
+A responsive Next.js (App Router) site for the JOINT billiards lounge: a marketing landing page
+plus a table booking flow. Brutalist/retro styling: vibrant orange background, cream surfaces,
+monospace type, and hard black borders with offset shadows.
 
 ## Running locally
 
@@ -13,11 +13,17 @@ npm run dev
 
 Open http://localhost:3000.
 
+## Pages
+
+- `/` — marketing landing page: hero, tables and rates, amenities, how booking works, hours and
+  location, and a closing call to action. Content lives in `lib/site.ts` so it is easy to edit.
+- `/book` — the reservation flow: table list, form, and confirmation screen.
+
 ## Booking flow
 
-`app/page.tsx` renders `components/reservation-form.tsx`, a client component that submits through
-the Server Action `submitReservation` in `app/actions.ts`. The action validates the fields, builds a
-booking ID (`JNT-YYYYMMDD-XXXX`), and POSTs the row to Google Sheets.
+`app/book/page.tsx` renders `components/reservation-form.tsx`, a client component that submits
+through the Server Action `submitReservation` in `app/actions.ts`. The action validates the fields,
+builds a booking ID (`JNT-YYYYMMDD-XXXX`), and POSTs the row to Google Sheets.
 
 State is managed with `useActionState`, so the form shows a pending state while the action runs and
 swaps to a confirmation panel on success.
@@ -176,12 +182,17 @@ error and the booking is not confirmed.
 ```
 app/
   actions.ts          Server Action: validate, create booking, POST to Sheets
-  layout.tsx          Fonts, metadata, global shell
-  page.tsx            Landing page: header, table list, reservation form
+  book/page.tsx       Reservation page: table list, form, confirmation
+  layout.tsx          Fonts, metadata, nav + footer shell
+  page.tsx            Landing page: hero, tables, amenities, process, visit, CTA
 components/
   header.tsx          Retro JOINT logotype and subtitle
+  landing/            Landing page sections (hero, tables, amenities, process, visit, CTA)
   reservation-form.tsx  Form fields, validation errors, confirmation screen
+  site-footer.tsx     Site footer with contact details
+  site-nav.tsx        Sticky top navigation
   submit-button.tsx   Submit button with useFormStatus pending state
 lib/
+  site.ts             Landing page copy, amenities, hours, house rules
   tables.ts           Shared table catalog (IDs, labels, rates)
 ```
