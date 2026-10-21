@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRef } from "react";
 import { Header } from "@/components/header";
 import { PoolBall } from "@/components/landing/pool-ball";
+import { PremiumPhotoHighlight } from "@/components/landing/premium-photo";
 import { SITE, STATS } from "@/lib/site";
 
 export function Hero() {
@@ -63,6 +64,8 @@ export function Hero() {
 
       <div className="relative z-10 mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
         <Header />
+
+        <PremiumPhotoHighlight variant="hero" className="my-8" />
 
         <p className="mx-auto mt-8 max-w-2xl text-center text-[12px] leading-relaxed font-bold tracking-[0.1em] text-joint-cream uppercase sm:text-sm sm:tracking-[0.14em]">
           {SITE.claim}
