@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BrandLogo } from "@/components/brand-logo";
 import { NAV_LINKS, SITE } from "@/lib/site";
 
 export function SiteFooter() {
@@ -6,12 +7,11 @@ export function SiteFooter() {
     <footer className="joint-grain relative overflow-hidden border-t-2 border-joint-black bg-joint-orange">
       <div className="relative z-10 mx-auto grid w-full max-w-6xl gap-6 px-4 py-10 sm:px-6 md:grid-cols-3">
         <div>
-          <p
-            className="text-3xl font-black tracking-[-0.05em] text-joint-cream uppercase select-none"
-            style={{ textShadow: "4px 4px 0px #000000" }}
-          >
-            JOINT
-          </p>
+          <BrandLogo
+            variant="cream"
+            sizes="220px"
+            className="joint-extrude-soft h-auto w-[190px] select-none"
+          />
           <p className="mt-2 text-[10px] font-bold tracking-[0.2em] text-joint-cream/80 uppercase">
             {SITE.tagline}
           </p>

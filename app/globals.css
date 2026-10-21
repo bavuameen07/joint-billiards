@@ -139,6 +139,27 @@
   }
 }
 
+@keyframes joint-filmstrip {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-25%, 0, 0);
+  }
+}
+
+@keyframes joint-pop {
+  from {
+    opacity: 0;
+    transform: perspective(1200px) rotateX(8deg) translate3d(0, 26px, -80px)
+      scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(1200px) rotateX(0deg) translate3d(0, 0, 0) scale(1);
+  }
+}
+
 @keyframes joint-glow {
   0%,
   100% {
@@ -446,6 +467,91 @@
   .joint-link:hover::after {
     transform: scaleX(1);
     transform-origin: left;
+  }
+
+  .joint-extrude {
+    filter:
+      drop-shadow(1px 1px 0 #000) drop-shadow(2px 2px 0 #000)
+      drop-shadow(3px 3px 0 #000) drop-shadow(4px 4px 0 #000)
+      drop-shadow(5px 5px 0 #000) drop-shadow(6px 6px 0 #000)
+      drop-shadow(7px 7px 0 #000) drop-shadow(8px 8px 0 #000)
+      drop-shadow(11px 11px 0 rgba(255, 69, 26, 0.7))
+      drop-shadow(16px 18px 26px rgba(0, 0, 0, 0.45));
+  }
+
+  .joint-extrude-soft {
+    filter:
+      drop-shadow(2px 2px 0 #000) drop-shadow(4px 4px 0 rgba(255, 69, 26, 0.6))
+      drop-shadow(6px 7px 10px rgba(0, 0, 0, 0.35));
+  }
+
+  .joint-stage {
+    perspective: 1400px;
+    perspective-origin: 50% 45%;
+  }
+
+  .joint-coverflow > * {
+    position: relative;
+    transform-style: preserve-3d;
+    transition:
+      transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1),
+      filter 0.7s ease;
+  }
+
+  .joint-coverflow > *:first-child {
+    transform: rotateY(15deg) translateZ(-130px) scale(0.92);
+    filter: brightness(0.6) saturate(0.85);
+  }
+
+  .joint-coverflow > *:nth-child(2) {
+    transform: rotateY(0deg) translateZ(70px) scale(1.06);
+    filter: brightness(1);
+  }
+
+  .joint-coverflow > *:last-child {
+    transform: rotateY(-15deg) translateZ(-130px) scale(0.92);
+    filter: brightness(0.6) saturate(0.85);
+  }
+
+  .joint-coverflow > *:hover,
+  .joint-coverflow > *:focus-visible {
+    z-index: 5;
+    transform: rotateY(0deg) translateZ(150px) scale(1.12);
+    filter: brightness(1.08);
+  }
+
+  .joint-pop {
+    animation: joint-pop 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+
+  .joint-filmstrip-track {
+    display: flex;
+    width: max-content;
+    animation: joint-filmstrip 42s linear infinite;
+    will-change: transform;
+  }
+
+  .joint-filmstrip:hover .joint-filmstrip-track {
+    animation-play-state: paused;
+  }
+
+  .joint-filmstrip-frame {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0 10px;
+    border-inline: 2px solid rgba(255, 253, 240, 0.14);
+  }
+
+  .joint-filmstrip-holes {
+    display: block;
+    width: 100%;
+    height: 9px;
+    background-image: repeating-linear-gradient(
+      90deg,
+      rgba(255, 183, 3, 0.9) 0 8px,
+      transparent 8px 20px
+    );
   }
 }
 

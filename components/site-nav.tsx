@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BrandLogo } from "@/components/brand-logo";
 import { NAV_LINKS, SITE } from "@/lib/site";
 
 export function SiteNav() {
@@ -10,10 +11,14 @@ export function SiteNav() {
       <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-x-6 gap-y-3 px-4 py-3 sm:px-6">
         <Link
           href="/"
-          className="text-xl font-black tracking-[-0.04em] text-joint-cream uppercase select-none transition hover:-translate-y-0.5"
-          style={{ textShadow: "3px 3px 0px #000000" }}
+          aria-label="JOINT home"
+          className="transition hover:-translate-y-0.5"
         >
-          JOINT
+          <BrandLogo
+            variant="cream"
+            sizes="120px"
+            className="joint-extrude-soft h-auto w-[104px] select-none"
+          />
         </Link>
 
         <ul className="flex flex-wrap items-center gap-x-5 gap-y-2">

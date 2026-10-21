@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BrandLogo } from "@/components/brand-logo";
 import { PoolBall } from "@/components/landing/pool-ball";
 import { SITE } from "@/lib/site";
 
@@ -22,6 +23,12 @@ export function CtaSection() {
         <p className="joint-chip inline-block border-2 border-joint-orange bg-joint-black px-3 py-1.5 text-[10px] font-bold tracking-[0.3em] text-joint-orange uppercase">
           {SITE.hours} • 6 Tables • Chalk Included
         </p>
+
+        <BrandLogo
+          variant="orange"
+          sizes="(max-width: 640px) 80vw, 420px"
+          className="joint-extrude-soft h-auto w-[min(78vw,420px)] select-none"
+        />
 
         <h2 className="max-w-3xl text-[clamp(2rem,9vw,5rem)] leading-[0.9] font-black tracking-[-0.05em] text-joint-cream uppercase">
           Ready to rack &apos;em up?

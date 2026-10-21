@@ -1,3 +1,5 @@
+import { BrandLogo } from "@/components/brand-logo";
+
 export function Header() {
   return (
     <header className="relative z-10 mb-8 flex flex-col items-center text-center">
@@ -7,9 +9,13 @@ export function Header() {
 
       <div className="joint-shift joint-depth-1">
         <div className="joint-logo-scroll">
-          <h1 className="joint-logo text-[clamp(4.5rem,24vw,13rem)] leading-[0.78] font-black tracking-[-0.07em] uppercase select-none">
-            JOINT
-          </h1>
+          <h1 className="sr-only">JOINT — Billiards &amp; Lounge</h1>
+          <BrandLogo
+            variant="cream"
+            priority
+            sizes="(max-width: 768px) 92vw, 900px"
+            className="joint-extrude h-auto w-[min(92vw,900px)] select-none"
+          />
         </div>
       </div>
 

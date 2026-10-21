@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { AmenitiesSection } from "@/components/landing/amenities-section";
 import { CtaSection } from "@/components/landing/cta-section";
+import { Filmstrip } from "@/components/landing/filmstrip";
 import { Hero } from "@/components/landing/hero";
+import { PosterWall } from "@/components/landing/poster-wall";
 import { ProcessSection } from "@/components/landing/process-section";
 import { TablesSection } from "@/components/landing/tables-section";
 import { Ticker } from "@/components/landing/ticker";
@@ -20,6 +22,8 @@ export default function HomePage() {
       <TablesSection />
       <Ticker />
       <AmenitiesSection />
+      <Filmstrip />
+      <PosterWall />
       <ProcessSection />
       <VisitSection />
       <CtaSection />

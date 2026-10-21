@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# source artwork (originals live here, optimised copies are committed in /public)
+/photos

@@ -75,6 +75,33 @@ export const HOUSE_RULES = [
   "Players under 18 need an adult present until 6 PM.",
 ];
 
+export const POSTERS = [
+  {
+    src: "/photos/poster-01.webp",
+    label: "Poster 01",
+    title: "Series One",
+    alt: "JOINT poster 01",
+    blurDataURL:
+      "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAACwBACdASoUABkAPtVUoU2oJKMiN+gBABqJbACdMuzIABa7Os0YWfmkWr5m8/4AAPjNRQcKawBD5TYv/mKoy9258kv/sHf+lY/1LP8hHk4yoZEQe4w/RumfxIzqpmCVbySQONNg97BUIbfqkWVofQR+zMDO/MJiSwB73lrwCt8RxMAA",
+  },
+  {
+    src: "/photos/poster-02.webp",
+    label: "Poster 02",
+    title: "Series Two",
+    alt: "JOINT poster 02",
+    blurDataURL:
+      "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAACQBACdASoUABkAPtleo02oJaMiN/qoAQAbCWgAsR7jeygNhtDKGFtJrv0DGQAAaelOtMjsClccf7mzXDau8v/4hziCS5bhqlclAwi5n78wi6Uafim/mOANWRruTVoQQ0D5hgLx3a9KCgfCcWsEmgvwAAA=",
+  },
+  {
+    src: "/photos/poster-03.webp",
+    label: "Poster 03",
+    title: "Series Three",
+    alt: "JOINT poster 03",
+    blurDataURL:
+      "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAADwBACdASoUABkAPtFWoU2oJKMiN+gBABoJaACdMoSCz6AAD0u8gCZvhfpc3d9n2MgA2eGbWAZDt/J3+K9T9eP/bl8U8GG5VfhOtlJOvxjqvkATdcvMmlxyLv5FX64bkwojJjPLp3VMMYYXa0SQAA==",
+  },
+];
+
 export const NAV_LINKS = [
   { href: "/#tables", label: "Tables" },
   { href: "/#amenities", label: "Amenities" },
