@@ -7,10 +7,10 @@ export function SectionLabel({
 }) {
   return (
     <div className={`mb-4 flex items-center gap-3 ${className}`}>
-      <span className="text-[10px] font-bold tracking-[0.25em] uppercase">
+      <span className="joint-label-minimal">
         {children}
       </span>
-      <span className="h-0.5 flex-1 bg-joint-black" />
+      <span className="h-px flex-1 bg-joint-ink/10" />
     </div>
   );
 }
