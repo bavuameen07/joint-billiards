@@ -1,82 +1,56 @@
 "use client";
 
 import Link from "next/link";
-import { useRef, useEffect } from "react";
 import Image from "next/image";
 import { SITE } from "@/lib/site";
 
 export function Hero() {
-  const ref = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const element = ref.current;
-    if (!element) return;
-
-    const updateBackground = () => {
-      const isMobile = window.innerWidth < 768;
-      element.style.backgroundSize = isMobile ? "cover" : "auto";
-      element.style.backgroundPosition = isMobile ? "center" : "center";
-    };
-
-    updateBackground();
-    window.addEventListener("resize", updateBackground);
-    return () => window.removeEventListener("resize", updateBackground);
-  }, []);
-
   return (
-    <section
-      ref={ref}
-      className="relative min-h-screen bg-gradient-to-b from-[var(--color-joint-bg)] via-[var(--color-joint-surface)] to-[var(--color-joint-black)] overflow-hidden"
-    >
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.06),transparent_55%)]" />
+    <section className="relative min-h-[100svh] overflow-hidden bg-[var(--color-joint-bg)]">
+      <div className="absolute inset-0">
+        <picture>
+          <source
+            media="(max-width: 767px)"
+            srcSet="/photos/poster-01.webp"
+          />
+          <Image
+            src="/photos/poster-01.webp"
+            alt="Premium billiards lounge interior with tables"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center md:object-[center_40%]"
+          />
+        </picture>
+        <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-joint-bg)] via-[rgba(10,10,10,0.6)] to-[rgba(10,10,10,0.4)] md:bg-gradient-to-r md:from-[var(--color-joint-bg)] md:via-[rgba(10,10,10,0.7)] md:to-transparent" />
+      </div>
 
-      <div className="relative z-10 max-w-3xl mx-auto px-4 py-12 sm:px-6 sm:py-16">
-        <div className="text-center">
-
-          <h1 className="mb-3 text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-joint-cream">
-            {SITE.name}
+      <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-4 pb-10 pt-20 sm:px-6 sm:pb-12 md:justify-center md:pb-0">
+        <div className="max-w-xl">
+          <h1 className="mb-3 text-3xl font-bold leading-tight text-[var(--color-joint-cream)] sm:text-4xl md:text-5xl lg:text-6xl">
+            WHERE EVERY GAME BECOMES AN EXPERIENCE
           </h1>
 
-          <p className="mb-8 text-lg sm:text-xl text-joint-offwhite-muted leading-relaxed">
-            {SITE.tagline}
+          <p className="mb-6 text-base leading-relaxed text-[rgba(255,224,178,0.9)] sm:text-lg md:text-xl">
+            Great games. Good company. Unforgettable moments. Step in, take your shot, and make it yours.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <div className="flex flex-col gap-3 sm:flex-row">
             <Link
               href="/book"
-              className="joint-btn py-3 px-8 text-[11px] font-medium tracking-[0.15em] text-joint-ink uppercase transition-colors bg-joint-amber text-joint-black hover:bg-joint-gold hover:text-joint-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-joint-amber focus-visible:ring-offset-2"
+              className="inline-flex items-center justify-center rounded-sm px-6 py-3 text-[11px] font-medium uppercase tracking-[0.2em] text-[var(--color-joint-black)] transition-colors bg-[var(--color-joint-gold)] hover:bg-[#f0d98c] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-joint-gold)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-joint-bg)]"
             >
-              Book a table →
+              Book Your Session
+            </Link>
+            <Link
+              href="#games"
+              className="inline-flex items-center justify-center rounded-sm border border-[rgba(255,224,178,0.4)] px-6 py-3 text-[11px] font-medium uppercase tracking-[0.2em] text-[var(--color-joint-cream)] transition-colors hover:bg-[rgba(255,224,178,0.08)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-joint-gold)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-joint-bg)]"
+            >
+              Explore the Lounge
             </Link>
           </div>
         </div>
       </div>
-
-      <div className="absolute top-0 left-0 right-0 bottom-0 overflow-hidden">
-        <Image
-          src="/photos/poster-01.webp"
-          alt="JOINT premium billiards lounge"
-          fill
-          className="object-cover joint-premium-photo-hero"
-          priority
-        />
-        <Image
-          src="/photos/poster-02.webp"
-          alt="JOINT night billiards session"
-          fill
-          className="object-cover joint-premium-photo-hero"
-          loading="eager"
-        />
-        <Image
-          src="/photos/poster-03.webp"
-          alt="JOINT cinematic vibes"
-          fill
-          className="object-cover joint-premium-photo-hero"
-          loading="eager"
-        />
-      </div>
-
-      <div className="absolute bottom-0 left-0 right-0 h-96 bg-[var(--color-joint-surface)]" />
     </section>
   );
 }
