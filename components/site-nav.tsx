@@ -12,7 +12,7 @@ export function SiteNav() {
     <>
       <nav
         aria-label="Main"
-        className="sticky top-0 z-50 border-b border-[#E8B58B] bg-white/95 backdrop-blur-md"
+        className="sticky top-0 z-50 border-b border-[#FF6D00] bg-white/98 backdrop-blur-md"
       >
         <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-x-4 gap-y-3 px-4 py-3 sm:px-6">
           <Link
@@ -32,7 +32,7 @@ export function SiteNav() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-xs font-medium tracking-[0.15em] text-[#21140E] uppercase transition-colors hover:text-[#FF6B00] min-h-[44px] flex items-center"
+                className="text-xs font-medium tracking-[0.15em] text-[#21140E] uppercase transition-colors hover:text-[#FF5A00] min-h-[44px] flex items-center"
               >
                 {link.label}
               </Link>
@@ -42,7 +42,7 @@ export function SiteNav() {
           <div className="hidden sm:block">
             <Link
               href="/book"
-              className="inline-flex min-h-[44px] items-center rounded-sm bg-[#FF6B00] px-5 py-2 text-[10px] font-medium tracking-[0.18em] text-white uppercase transition-colors hover:bg-[#F45100] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF6B00] focus-visible:ring-offset-2 sm:text-[11px]"
+              className="inline-flex min-h-[44px] items-center rounded-sm bg-[#FF5A00] px-5 py-2 text-[10px] font-medium tracking-[0.18em] text-white uppercase transition-colors hover:bg-[#E64500] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF5A00] focus-visible:ring-offset-2 sm:text-[11px]"
             >
               Book a table
             </Link>
