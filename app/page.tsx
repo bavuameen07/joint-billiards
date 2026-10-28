@@ -4,8 +4,8 @@ import { CtaSection } from "@/components/landing/cta-section";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: `${SITE.name} — ${SITE.tagline}`,
-  description: `${SITE.claim} Reserve a billiards or snooker table online at ${SITE.name}.`,
+  title: `${SITE.name} — Digital Experiences`,
+  description: "Creative websites, distinctive branding, and digital experiences designed to make businesses more memorable.",
 };
 
 export default function HomePage() {
