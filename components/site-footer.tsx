@@ -4,7 +4,7 @@ import { NAV_LINKS, SITE } from "@/lib/site";
 
 export function SiteFooter() {
   return (
-    <footer className="relative border-t border-[#FF6D00] bg-[#2B170D]">
+    <footer className="relative border-t border-[#315447] bg-[#1A1815]">
       <div className="relative z-10 mx-auto grid w-full max-w-7xl gap-8 px-4 py-10 sm:px-6 sm:py-12 md:grid-cols-4">
         <div className="md:col-span-2">
           <BrandLogo
@@ -12,7 +12,7 @@ export function SiteFooter() {
             sizes="(max-width: 640px) 70vw, 200px"
             className="h-auto w-[min(70vw,200px)] select-none"
           />
-          <p className="mt-3 max-w-xs text-sm text-[#FFF7ED]">
+          <p className="mt-3 max-w-xs text-sm text-[#A9A49B]">
             {SITE.tagline}
           </p>
         </div>
@@ -26,7 +26,7 @@ export function SiteFooter() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="inline-flex min-h-[44px] items-center text-sm text-[#FFF7ED] transition-colors hover:text-[#FFB000]"
+                  className="inline-flex min-h-[44px] items-center text-sm text-[#F5F0E7] transition-colors hover:text-[#F05A22]"
                 >
                   {link.label}
                 </Link>
@@ -39,20 +39,20 @@ export function SiteFooter() {
           <p className="mb-3 text-xs tracking-[0.2em] uppercase text-[#FFB000]">
             Visit
           </p>
-          <address className="space-y-2 text-sm not-italic text-[#FFF7ED]/90">
+          <address className="space-y-2 text-sm not-italic text-[#F5F0E7]/90">
             {SITE.address.map((line) => (
               <span key={line} className="block">{line}</span>
             ))}
             <span className="block">Open {SITE.hours}</span>
             <a
               href={`tel:${SITE.phone.replace(/\s+/g, "")}`}
-              className="block min-h-[44px] flex items-center transition-colors hover:text-[#FFB000]"
+              className="block min-h-[44px] flex items-center transition-colors hover:text-[#F05A22]"
             >
               {SITE.phone}
             </a>
             <a
               href={`mailto:${SITE.email}`}
-              className="block min-h-[44px] flex items-center transition-colors hover:text-[#FFB000]"
+              className="block min-h-[44px] flex items-center transition-colors hover:text-[#F05A22]"
             >
               {SITE.email}
             </a>
@@ -60,8 +60,8 @@ export function SiteFooter() {
         </div>
       </div>
 
-      <div className="border-t border-[#FF6D00]/60">
-        <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-2 px-4 py-4 text-xs text-[#FFF7ED]/70 sm:flex-row sm:px-6">
+      <div className="border-t border-[#315447]/60">
+        <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-2 px-4 py-4 text-xs text-[#F5F0E7]/70 sm:flex-row sm:px-6">
           <span>
             © {SITE.name} — {SITE.tagline}
           </span>
