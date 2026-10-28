@@ -12,7 +12,7 @@ export function SiteNav() {
     <>
       <nav
         aria-label="Main"
-        className="sticky top-0 z-50 border-b border-[rgba(212,175,55,0.25)] bg-[rgba(5,5,16,0.8)] backdrop-blur-md"
+        className="sticky top-0 z-50 border-b border-[#FED7AA] bg-white/95 backdrop-blur-md"
       >
         <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-x-4 gap-y-3 px-4 py-3 sm:px-6">
           <Link
@@ -21,7 +21,7 @@ export function SiteNav() {
             className="flex-shrink-0 transition hover:opacity-80"
           >
             <BrandLogo
-              variant="cream"
+              variant="black"
               sizes="120px"
               className="h-auto w-[110px] select-none sm:w-[120px]"
             />
@@ -32,7 +32,7 @@ export function SiteNav() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-xs font-medium tracking-[0.15em] text-[rgba(234,231,223,0.85)] uppercase transition hover:text-[var(--color-joint-gold)] min-h-[44px] flex items-center"
+                className="text-xs font-medium tracking-[0.15em] text-[#1C1917] uppercase transition-colors hover:text-[#F97316] min-h-[44px] flex items-center"
               >
                 {link.label}
               </Link>
@@ -42,7 +42,7 @@ export function SiteNav() {
           <div className="hidden sm:block">
             <Link
               href="/book"
-              className="inline-flex min-h-[44px] items-center rounded-sm border border-[rgba(212,175,55,0.5)] px-5 py-2 text-[10px] font-medium tracking-[0.18em] text-[var(--color-joint-cream)] uppercase transition hover:bg-[rgba(212,175,55,0.12)] hover:border-[var(--color-joint-gold)] sm:text-[11px]"
+              className="inline-flex min-h-[44px] items-center rounded-sm bg-[#F97316] px-5 py-2 text-[10px] font-medium tracking-[0.18em] text-white uppercase transition-colors hover:bg-[#EA580C] sm:text-[11px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F97316] focus-visible:ring-offset-2"
             >
               Book a table
             </Link>
