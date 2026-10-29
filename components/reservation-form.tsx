@@ -90,7 +90,7 @@ function FormPanel({ onRestart }: { onRestart: () => void }) {
         {showErrorBanner && (
           <div
             role="alert"
-            className="border-2 border-joint-black bg-joint-orange px-3 py-2.5 text-[10px] font-bold tracking-[0.15em] text-joint-black uppercase shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] md:col-span-2"
+            className="border-2 border-joint-black bg-joint-orange px-3 py-2.5 text-[10px] font-bold tracking-[0.15em] text-white uppercase shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] md:col-span-2"
           >
             ✕ {state.message || 'Something went wrong. Please try again.'}
           </div>
@@ -207,7 +207,7 @@ function FormPanel({ onRestart }: { onRestart: () => void }) {
             {DURATIONS.map((hours, index) => (
               <label
                 key={hours}
-                className="flex cursor-pointer items-center justify-center border-2 border-joint-black bg-white py-3 text-xs font-bold text-joint-black transition has-[:checked]:bg-joint-black has-[:checked]:text-joint-cream has-[:focus-visible]:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:bg-joint-orange sm:text-sm"
+                className="flex cursor-pointer items-center justify-center border-2 border-joint-black bg-white py-3 text-xs font-bold text-joint-black transition has-[:checked]:bg-joint-black has-[:checked]:text-joint-cream has-[:focus-visible]:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:bg-joint-orange hover:text-white sm:text-sm"
               >
                 <input
                   type="radio"
@@ -306,14 +306,14 @@ function Confirmation({
     >
       <div
         aria-hidden="true"
-        className="mx-auto mb-6 flex h-16 w-16 items-center justify-center border-2 border-joint-black bg-joint-orange text-3xl font-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+        className="mx-auto mb-6 flex h-16 w-16 items-center justify-center border-2 border-joint-black bg-joint-orange text-3xl font-black text-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
       >
         ✓
       </div>
 
       <h2
         className="text-[clamp(1.75rem,7vw,3.25rem)] leading-none font-black tracking-[-0.03em] uppercase"
-        style={{ textShadow: "4px 4px 0px #FF451A" }}
+        style={{ textShadow: "4px 4px 0px #2563EB" }}
       >
         Reservation Confirmed!
       </h2>
@@ -345,7 +345,7 @@ function Confirmation({
         </dl>
       </div>
 
-      <div className="mx-auto mt-5 max-w-md border-2 border-joint-black bg-joint-orange px-3 py-2 text-[9px] font-bold tracking-[0.14em] uppercase shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]">
+      <div className="mx-auto mt-5 max-w-md border-2 border-joint-black bg-joint-orange px-3 py-2 text-[9px] text-white font-bold tracking-[0.14em] uppercase shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]">
         {synced
           ? 'Row appended to the JOINT reservation sheet.'
           : 'Sheet webhook not configured — set NEXT_PUBLIC_GOOGLE_SHEET_WEBHOOK_URL to sync bookings.'}

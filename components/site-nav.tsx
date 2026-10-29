@@ -32,7 +32,7 @@ export function SiteNav() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-xs font-medium tracking-[0.15em] text-[#211F1B] uppercase transition-colors hover:text-[#F05A22] min-h-[44px] flex items-center"
+                className="text-xs font-medium tracking-[0.15em] text-[#211F1B] uppercase transition-colors hover:text-[#2563EB] min-h-[44px] flex items-center"
               >
                 {link.label}
               </Link>
@@ -42,7 +42,7 @@ export function SiteNav() {
           <div className="hidden sm:block">
             <Link
               href="/book"
-              className="inline-flex min-h-[44px] items-center rounded-sm bg-[#F05A22] px-5 py-2 text-[10px] font-medium tracking-[0.18em] text-white uppercase transition-colors hover:bg-[#FF6B2C] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F05A22] focus-visible:ring-offset-2 sm:text-[11px]"
+              className="inline-flex min-h-[44px] items-center rounded-sm bg-[#2563EB] px-5 py-2 text-[10px] font-medium tracking-[0.18em] text-white uppercase transition-colors hover:bg-[#3B82F6] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB] focus-visible:ring-offset-2 sm:text-[11px]"
             >
               Book a table
             </Link>
@@ -51,7 +51,7 @@ export function SiteNav() {
           <div className="hidden sm:block">
             <Link
               href="/book"
-              className="inline-flex min-h-[44px] items-center rounded-sm bg-[#FF5A00] px-5 py-2 text-[10px] font-medium tracking-[0.18em] text-white uppercase transition-colors hover:bg-[#E64500] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF5A00] focus-visible:ring-offset-2 sm:text-[11px]"
+              className="inline-flex min-h-[44px] items-center rounded-sm bg-[#2563EB] px-5 py-2 text-[10px] font-medium tracking-[0.18em] text-white uppercase transition-colors hover:bg-[#1D4ED8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB] focus-visible:ring-offset-2 sm:text-[11px]"
             >
               Book a table
             </Link>
@@ -95,7 +95,7 @@ export function SiteNav() {
           <div className="flex h-full w-full max-w-sm flex-col items-start justify-start gap-8 px-6 py-10">
             <button
               type="button"
-              className="absolute top-4 right-4 flex h-12 w-12 items-center justify-center rounded-sm border border-[rgba(212,175,55,0.3)] text-[var(--color-joint-cream)] transition hover:bg-[rgba(212,175,55,0.12)] active:scale-95"
+              className="absolute top-4 right-4 flex h-12 w-12 items-center justify-center rounded-sm border border-[rgba(96,165,250,0.3)] text-[var(--color-joint-cream)] transition hover:bg-[rgba(96,165,250,0.12)] active:scale-95"
               onClick={(e) => { e.stopPropagation(); setOpen(false); }}
               aria-label="Close menu"
             >
@@ -118,7 +118,7 @@ export function SiteNav() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="w-full text-left text-sm font-medium tracking-[0.15em] text-[var(--color-joint-cream)] uppercase py-3 border-b border-[rgba(212,175,55,0.2)] transition hover:text-[var(--color-joint-gold)]"
+                  className="w-full text-left text-sm font-medium tracking-[0.15em] text-[var(--color-joint-cream)] uppercase py-3 border-b border-[rgba(96,165,250,0.2)] transition hover:text-[var(--color-joint-gold)]"
                 >
                   {link.label}
                 </Link>
@@ -126,13 +126,13 @@ export function SiteNav() {
               <Link
                 href="/book"
                 onClick={() => setOpen(false)}
-                className="mt-4 w-full text-center rounded-sm border border-[rgba(212,175,55,0.5)] px-4 py-3 text-[11px] font-medium tracking-[0.18em] text-[var(--color-joint-cream)] uppercase transition hover:bg-[rgba(212,175,55,0.12)]"
+                className="mt-4 w-full text-center rounded-sm border border-[rgba(96,165,250,0.5)] px-4 py-3 text-[11px] font-medium tracking-[0.18em] text-[var(--color-joint-cream)] uppercase transition hover:bg-[rgba(96,165,250,0.12)]"
               >
                 Book a table
               </Link>
             </nav>
 
-            <div className="mt-auto w-full border-t border-[rgba(212,175,55,0.2)] pt-6">
+            <div className="mt-auto w-full border-t border-[rgba(96,165,250,0.2)] pt-6">
               <p className="mb-3 text-[10px] tracking-[0.2em] uppercase text-[var(--color-joint-gold)]">
                 {SITE.name}
               </p>

@@ -18,7 +18,7 @@ export function SiteFooter() {
         </div>
 
         <nav aria-label="Footer">
-          <p className="mb-3 text-xs tracking-[0.2em] uppercase text-[#FFB000]">
+          <p className="mb-3 text-xs tracking-[0.2em] uppercase text-[#60A5FA]">
             Explore
           </p>
           <ul className="space-y-2">
@@ -26,7 +26,7 @@ export function SiteFooter() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="inline-flex min-h-[44px] items-center text-sm text-[#F5F0E7] transition-colors hover:text-[#F05A22]"
+                  className="inline-flex min-h-[44px] items-center text-sm text-[#F5F0E7] transition-colors hover:text-[#2563EB]"
                 >
                   {link.label}
                 </Link>
@@ -36,7 +36,7 @@ export function SiteFooter() {
         </nav>
 
         <div>
-          <p className="mb-3 text-xs tracking-[0.2em] uppercase text-[#FFB000]">
+          <p className="mb-3 text-xs tracking-[0.2em] uppercase text-[#60A5FA]">
             Visit
           </p>
           <address className="space-y-2 text-sm not-italic text-[#F5F0E7]/90">
@@ -46,13 +46,13 @@ export function SiteFooter() {
             <span className="block">Open {SITE.hours}</span>
             <a
               href={`tel:${SITE.phone.replace(/\s+/g, "")}`}
-              className="block min-h-[44px] flex items-center transition-colors hover:text-[#F05A22]"
+              className="block min-h-[44px] flex items-center transition-colors hover:text-[#2563EB]"
             >
               {SITE.phone}
             </a>
             <a
               href={`mailto:${SITE.email}`}
-              className="block min-h-[44px] flex items-center transition-colors hover:text-[#F05A22]"
+              className="block min-h-[44px] flex items-center transition-colors hover:text-[#2563EB]"
             >
               {SITE.email}
             </a>

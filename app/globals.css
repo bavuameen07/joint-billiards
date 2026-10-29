@@ -9,16 +9,16 @@
   --color-joint-offwhite-muted: #A9A49B;
   --color-joint-black: #211F1B;
   --color-joint-ink: #211F1B;
-  --color-joint-deep: #C74618;
-  --color-joint-amber: #FFB000;
-  --color-joint-gold: #FFB000;
-  --color-joint-accent: #F05A22;
+  --color-joint-deep: #1E40AF;
+  --color-joint-amber: #60A5FA;
+  --color-joint-gold: #60A5FA;
+  --color-joint-accent: #2563EB;
   --color-joint-border: #315447;
-  --color-joint-orange: #F05A22;
-  --color-joint-orange-bright: #FF6B2C;
-  --color-joint-orange-deep: #E64500;
-  --color-joint-orange-burnt: #C74618;
-  --color-joint-orange-gold: #FFB000;
+  --color-joint-orange: #2563EB;
+  --color-joint-orange-bright: #3B82F6;
+  --color-joint-orange-deep: #1D4ED8;
+  --color-joint-orange-burnt: #1E40AF;
+  --color-joint-orange-gold: #60A5FA;
   --color-joint-orange-ivory: #F5F0E7;
   --color-joint-text-dark: #211F1B;
   --color-joint-text-body: #A9A49B;
@@ -30,7 +30,7 @@
   --color-joint-error: #DC2626;
   --color-joint-glass: rgba(255, 240, 235, 0.9);
   --color-joint-glass-border: #315447;
-  --color-joint-glass-shadow: rgba(183, 70, 24, 0.25);
+  --color-joint-glass-shadow: rgba(37, 99, 235, 0.25);
   --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
@@ -250,7 +250,7 @@
       6px 6px 0 #000,
       7px 7px 0 #000,
       8px 8px 0 #000,
-      12px 12px 0 rgba(255, 69, 26, 0.65),
+      12px 12px 0 rgba(37, 99, 235, 0.65),
       18px 18px 26px rgba(0, 0, 0, 0.35);
     transform: perspective(900px) rotateX(0deg) rotateY(0deg);
     transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -350,9 +350,9 @@
       ),
       radial-gradient(
         circle at 50% 58%,
-        #ff7a45,
-        #d63a12 46%,
-        #4d1003 100%
+        #60a5fa,
+        #2563eb 46%,
+        #1e3a8a 100%
       );
     box-shadow:
       inset -6px -8px 16px rgba(0, 0, 0, 0.55),
@@ -503,13 +503,13 @@
       drop-shadow(3px 3px 0 #000) drop-shadow(4px 4px 0 #000)
       drop-shadow(5px 5px 0 #000) drop-shadow(6px 6px 0 #000)
       drop-shadow(7px 7px 0 #000) drop-shadow(8px 8px 0 #000)
-      drop-shadow(11px 11px 0 rgba(255, 69, 26, 0.7))
+      drop-shadow(11px 11px 0 rgba(37, 99, 235, 0.7))
       drop-shadow(16px 18px 26px rgba(0, 0, 0, 0.45));
   }
 
   .joint-extrude-soft {
     filter:
-      drop-shadow(2px 2px 0 #000) drop-shadow(4px 4px 0 rgba(255, 69, 26, 0.6))
+      drop-shadow(2px 2px 0 #000) drop-shadow(4px 4px 0 rgba(37, 99, 235, 0.6))
       drop-shadow(6px 7px 10px rgba(0, 0, 0, 0.35));
   }
 
@@ -577,7 +577,7 @@
     height: 9px;
     background-image: repeating-linear-gradient(
       90deg,
-      rgba(255, 183, 3, 0.9) 0 8px,
+      rgba(96, 165, 250, 0.9) 0 8px,
       transparent 8px 20px
     );
   }
@@ -614,7 +614,7 @@
   .joint-premium-dot.active {
     background: var(--color-joint-orange);
     border-color: var(--color-joint-orange);
-    box-shadow: 0 0 0 3px rgba(255, 69, 26, 0.3);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
   }
 
   .joint-premium-photo-grid {
@@ -825,7 +825,7 @@
   .joint-photo-nav-dot.active {
     background: var(--color-joint-orange);
     border-color: var(--color-joint-orange);
-    box-shadow: 0 0 0 4px rgba(255, 69, 26, 0.35);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.35);
     transform: scale(1.25);
   }
 
@@ -912,7 +912,7 @@
       0 12px 48px -12px var(--color-joint-glass-shadow),
       0 0 0 1px var(--color-joint-glass-border) inset,
       0 4px 16px -4px rgba(0, 0, 0, 0.06),
-      0 0 80px -20px rgba(255, 69, 26, 0.08);
+      0 0 80px -20px rgba(37, 99, 235, 0.08);
   }
 
   .joint-glass-card {
@@ -930,12 +930,12 @@
 
   .joint-glass-card:hover {
     background: rgba(250, 247, 240, 0.85);
-    border-color: rgba(255, 69, 26, 0.25);
+    border-color: rgba(37, 99, 235, 0.25);
     box-shadow:
       0 16px 64px -16px var(--color-joint-glass-shadow),
-      0 0 0 1px rgba(255, 69, 26, 0.15) inset,
+      0 0 0 1px rgba(37, 99, 235, 0.15) inset,
       0 4px 24px -4px rgba(0, 0, 0, 0.05),
-      0 0 100px -20px rgba(255, 69, 26, 0.12);
+      0 0 100px -20px rgba(37, 99, 235, 0.12);
     transform: translateY(-6px) scale(1.02);
   }
 
@@ -1027,7 +1027,7 @@
   .joint-surface-card:hover {
     box-shadow:
       0 16px 56px -12px rgba(0, 0, 0, 0.08),
-      0 0 0 1px rgba(255, 69, 26, 0.1) inset,
+      0 0 0 1px rgba(37, 99, 235, 0.1) inset,
       0 8px 32px -8px rgba(0, 0, 0, 0.05);
     transform: translateY(-4px);
   }

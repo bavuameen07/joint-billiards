@@ -10,7 +10,7 @@ export function AmenitiesSection() {
       className="joint-grain relative overflow-hidden border-b border-joint-ink/10 bg-joint-offwhite"
     >
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-        <div className="joint-drift absolute -top-24 -right-24 h-72 w-72 rounded-full bg-[radial-gradient(circle,rgba(255,69,26,0.1),transparent_65%)] blur-2xl" />
+        <div className="joint-drift absolute -top-24 -right-24 h-72 w-72 rounded-full bg-[radial-gradient(circle,rgba(37,99,235,0.1),transparent_65%)] blur-2xl" />
         <div className="joint-drift absolute bottom-0 -left-20 h-64 w-64 rounded-full bg-[radial-gradient(circle,rgba(26,10,4,0.1),transparent_65%)] blur-2xl [animation-delay:-6s]" />
       </div>
 

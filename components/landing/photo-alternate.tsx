@@ -36,13 +36,13 @@ export function PhotoAlternate({
     >
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
         {background === "cream" && (
-          <div className="absolute top-[-20%] right-[-10%] h-80 w-80 rounded-full bg-[radial-gradient(circle,rgba(255,69,26,0.08),transparent_60%)] blur-3xl" />
+          <div className="absolute top-[-20%] right-[-10%] h-80 w-80 rounded-full bg-[radial-gradient(circle,rgba(37,99,235,0.08),transparent_60%)] blur-3xl" />
         )}
         {background === "orange" && (
-          <div className="absolute bottom-[-20%] left-[-10%] h-80 w-80 rounded-full bg-[radial-gradient(circle,rgba(255,183,3,0.1),transparent_60%)] blur-3xl" />
+          <div className="absolute bottom-[-20%] left-[-10%] h-80 w-80 rounded-full bg-[radial-gradient(circle,rgba(96,165,250,0.1),transparent_60%)] blur-3xl" />
         )}
         {background === "black" && (
-          <div className="absolute top-[-30%] left-1/2 h-[60vh] w-[100vw] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,69,26,0.08),transparent_65%)] blur-3xl" />
+          <div className="absolute top-[-30%] left-1/2 h-[60vh] w-[100vw] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(37,99,235,0.08),transparent_65%)] blur-3xl" />
         )}
       </div>
 

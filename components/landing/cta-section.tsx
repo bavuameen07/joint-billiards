@@ -17,7 +17,7 @@ export function CtaSection() {
 
         <Link
           href="/book"
-          className="inline-flex min-h-[48px] items-center rounded-sm bg-[#F05A22] px-8 py-3 text-[11px] font-medium uppercase tracking-[0.2em] text-white transition-colors hover:bg-[#FF6B2C] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F05A22] focus-visible:ring-offset-2"
+          className="inline-flex min-h-[48px] items-center rounded-sm bg-[#2563EB] px-8 py-3 text-[11px] font-medium uppercase tracking-[0.2em] text-white transition-colors hover:bg-[#3B82F6] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB] focus-visible:ring-offset-2"
         >
           BOOK A TABLE →
         </Link>

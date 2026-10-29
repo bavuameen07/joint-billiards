@@ -39,7 +39,7 @@ export function HeroSplit() {
     >
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
         <div className="joint-shift joint-depth-5 absolute inset-0">
-          <div className="absolute top-[-25%] left-1/2 h-[75vh] w-[95vw] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,183,3,0.32),transparent_62%)] blur-3xl" />
+          <div className="absolute top-[-25%] left-1/2 h-[75vh] w-[95vw] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(96,165,250,0.32),transparent_62%)] blur-3xl" />
         </div>
 
         <div className="joint-ring left-[4%] top-[18%] h-40 w-40" />
@@ -159,7 +159,7 @@ function HeroPhotoFrame() {
         <span className="joint-photo-nav-dot" aria-label="Poster 3" />
       </div>
 
-      <div className="joint-hero-photo-glow absolute bottom-[-20%] left-1/2 -translate-x-1/2 h-32 w-[80%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(255,69,26,0.25),transparent_70%)] blur-xl pointer-events-none" />
+      <div className="joint-hero-photo-glow absolute bottom-[-20%] left-1/2 -translate-x-1/2 h-32 w-[80%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(37,99,235,0.25),transparent_70%)] blur-xl pointer-events-none" />
     </div>
   );
 }

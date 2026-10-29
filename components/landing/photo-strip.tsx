@@ -27,7 +27,7 @@ export function FullWidthPhotoStrip({
       className={`joint-photo-strip relative overflow-hidden border-y border-joint-ink/10 bg-joint-offwhite ${className}`}
     >
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-        <div className="absolute top-[-30%] left-1/2 h-[80vh] w-[120vw] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,69,26,0.12),transparent_60%)] blur-3xl" />
+        <div className="absolute top-[-30%] left-1/2 h-[80vh] w-[120vw] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(37,99,235,0.12),transparent_60%)] blur-3xl" />
       </div>
 
       <div className="relative z-10">
@@ -62,7 +62,7 @@ export function FullWidthPhotoStrip({
         </div>
       </div>
 
-      <div className="joint-photo-strip-glow absolute bottom-[-15%] left-1/2 -translate-x-1/2 h-24 w-[60%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(255,69,26,0.18),transparent_70%)] blur-xl pointer-events-none" />
+      <div className="joint-photo-strip-glow absolute bottom-[-15%] left-1/2 -translate-x-1/2 h-24 w-[60%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(37,99,235,0.18),transparent_70%)] blur-xl pointer-events-none" />
     </section>
   );
 }

@@ -48,7 +48,7 @@ export function PosterWall() {
       className="joint-grain relative overflow-hidden border-y-2 border-joint-black bg-joint-black text-joint-cream"
     >
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-        <div className="absolute top-[-30%] left-1/2 h-[70vh] w-[110vw] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,69,26,0.35),transparent_62%)] blur-3xl" />
+        <div className="absolute top-[-30%] left-1/2 h-[70vh] w-[110vw] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(37,99,235,0.35),transparent_62%)] blur-3xl" />
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 sm:py-16 lg:py-20">
@@ -79,7 +79,7 @@ export function PosterWall() {
               className="joint-poster-card group relative flex-shrink-0 snap-center w-[86vw] max-w-[280px] sm:w-[42vw] max-w-[320px] lg:w-[30%] cursor-pointer"
               role="listitem"
             >
-              <span className="relative block aspect-[4/5] w-full overflow-hidden border-2 border-joint-cream/25 bg-joint-ink shadow-[10px_12px_0px_0px_rgba(255,69,26,0.85)] transition-all duration-500 group-hover:shadow-[14px_18px_0px_0px_rgba(255,69,26,0.95)] lg:group-hover:scale-[1.02]">
+              <span className="relative block aspect-[4/5] w-full overflow-hidden border-2 border-joint-cream/25 bg-joint-ink shadow-[10px_12px_0px_0px_rgba(37,99,235,0.85)] transition-all duration-500 group-hover:shadow-[14px_18px_0px_0px_rgba(37,99,235,0.95)] lg:group-hover:scale-[1.02]">
                 <Image
                   src={poster.src}
                   alt={poster.alt}
@@ -99,7 +99,7 @@ export function PosterWall() {
           ))}
         </div>
 
-        <div aria-hidden="true" className="mt-8 h-12 w-[70%] mx-auto rounded-[50%] bg-[radial-gradient(ellipse_at_center,rgba(255,69,26,0.4),transparent_70%)] blur-xl" />
+        <div aria-hidden="true" className="mt-8 h-12 w-[70%] mx-auto rounded-[50%] bg-[radial-gradient(ellipse_at_center,rgba(37,99,235,0.4),transparent_70%)] blur-xl" />
       </div>
 
       {current ? (
@@ -117,7 +117,7 @@ export function PosterWall() {
           />
 
           <div className="joint-pop relative w-full max-w-[420px]">
-            <div className="relative aspect-[4/5] w-full overflow-hidden border-2 border-joint-cream/30 shadow-[14px_16px_0px_0px_rgba(255,69,26,0.9)]">
+            <div className="relative aspect-[4/5] w-full overflow-hidden border-2 border-joint-cream/30 shadow-[14px_16px_0px_0px_rgba(37,99,235,0.9)]">
               <Image
                 src={current.src}
                 alt={current.alt}
@@ -136,21 +136,21 @@ export function PosterWall() {
               <button
                 type="button"
                 onClick={() => step(-1)}
-                className="joint-btn min-h-[44px] min-w-[44px] border-2 border-joint-cream/40 px-4 py-2.5 text-[10px] font-bold tracking-[0.25em] uppercase transition hover:border-joint-orange hover:bg-joint-orange hover:text-joint-black"
+                className="joint-btn min-h-[44px] min-w-[44px] border-2 border-joint-cream/40 px-4 py-2.5 text-[10px] font-bold tracking-[0.25em] uppercase transition hover:border-joint-orange hover:bg-joint-orange hover:text-white"
               >
                 ← Prev
               </button>
               <button
                 type="button"
                 onClick={close}
-                className="joint-btn min-h-[44px] min-w-[44px] border-2 border-joint-black bg-joint-orange px-5 py-2.5 text-[10px] font-bold tracking-[0.25em] text-joint-black uppercase shadow-[4px_4px_0px_0px_rgba(255,253,240,1)] transition hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_0px_rgba(255,253,240,1)]"
+                className="joint-btn min-h-[44px] min-w-[44px] border-2 border-joint-black bg-joint-orange px-5 py-2.5 text-[10px] font-bold tracking-[0.25em] text-white uppercase shadow-[4px_4px_0px_0px_rgba(255,253,240,1)] transition hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_0px_rgba(255,253,240,1)]"
               >
                 Close ✕
               </button>
               <button
                 type="button"
                 onClick={() => step(1)}
-                className="joint-btn min-h-[44px] min-w-[44px] border-2 border-joint-cream/40 px-4 py-2.5 text-[10px] font-bold tracking-[0.25em] uppercase transition hover:border-joint-orange hover:bg-joint-orange hover:text-joint-black"
+                className="joint-btn min-h-[44px] min-w-[44px] border-2 border-joint-cream/40 px-4 py-2.5 text-[10px] font-bold tracking-[0.25em] uppercase transition hover:border-joint-orange hover:bg-joint-orange hover:text-white"
               >
                 Next →
               </button>
